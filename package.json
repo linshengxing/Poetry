@@ -1,0 +1,26 @@
+{
+    "name": "Poetry",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "keywords": [
+        "koa2"
+    ],
+    "author": "Lins",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/linshengxing/Poetry.git"
+    },
+    "dependencies": {
+        "koa": "2.7.0",
+        "koa-router": "7.4.0",
+        "koa-bodyparser": "4.2.1",
+        "nunjucks": "3.2.0",
+        "mime": "2.4.4",
+        "mz": "2.7.0"
+    }
+}

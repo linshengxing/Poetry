@@ -2,6 +2,7 @@ const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const controller = require('./controller');
 const templating = require('./templating');
+const path = require('path');
 const app = new Koa();
 const isProduction = process.env.NODE_ENV === 'production';
 

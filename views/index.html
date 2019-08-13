@@ -1,43 +1,30 @@
 {% extends "base.html" %} {% block main %}
 <div class="container-fluid" style="margin-top: 10%;padding-bottom: 150px;">
-    <div class="text-center text-white" style="font-family:'Courier New', Courier, monospace;height: 90%;margin-top: 5%;">
-        <!-- <h2>《长相思》</h2>
-        <h6 class="text-primary">納蘭性德</h6>
-        <h5>山一程，水一程，</h5>
-        <h5>身向榆关那畔行，夜深千帐灯。</h5>
-        <h5>风一更，雪一更，</h5>
-        <h5>聒碎乡心梦不成，故园无此声。</h5> -->
-        <!-- <h5>骊山语罢清宵半，泪雨霖铃终不怨。</h5>
-        <h5>何如薄幸锦衣郎，比翼连枝当日愿。</h5> -->
+    <div class="text-center text-white"
+        style="font-family:'Courier New', Courier, monospace;height: 90%;margin-top: 5%;">
         <table style="width:100%;height:100%;">
             <thead>
                 <tr>
-                    <th><h2>《长相思》</h2></th>
+                    <th>
+                        <h2>{{ poetry.title}}</h2>
+                    </th>
                 </tr>
                 <tr>
                     <!-- <th><h6 class="label label-info"><strong>纳兰性德</strong></h6></th> -->
-                    <th><span class="badge badge-info" style="font-size: 90%;margin-bottom: 6px;">纳兰性德</span></th>
+                    <th><span class="badge badge-info"
+                            style="font-size: 90%;margin-bottom: 6px;">{{ poetry.author }}</span></th>
                 </tr>
             </thead>
             <tbody>
+                {% for item in poetry.content.split('|') %}
                 <tr>
-                    <td><h5>山一程，水一程，</h5></td>
+                    <td>
+                        <h5>{{ item }}</h5>
+                    </td>
                 </tr>
-                <tr>
-                    <td><h5>身向榆关那畔行，夜深千帐灯。</h5></td>
-                </tr>
-                <tr>
-                    <td><h5>风一更，雪一更，</h5></td>
-                </tr>
-                <tr>
-                    <td><h5>聒碎乡心梦不成，故园无此声。</h5></td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
-        <!-- <blockquote style="margin-top: 30pxt;">
-            <p><h5>山一程，水一程，身向榆关那畔行，夜深千帐灯。风一更，雪一更，聒碎乡心梦不成，故园无此声。</h5></p>
-            <small class="text-primary"><h6>--《长相思》 纳兰性德</h6></small>
-        </blockquote> -->
     </div>
 </div>
 {% endblock %}

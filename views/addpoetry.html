@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block main %}
+<div class="container mt-5 " style="width:360px;height:380px;border: 1px,solid;background: #FCFAF2;">
+    <form action="/addpoetry" method="POST">
+        <div class="form-group">
+            <label>题目：</label>
+            <div class="input-group">
+                <input aria-label="title" type="text" name="title" class="form-control" autocomplete="off" required >
+            </div>
+        </div>
+        <div class="form-group">
+            <lable>作者：</lable>
+            <div class="input-group">
+                <input aria-label="author" type="text" name="author" class="form-control" autocomplete="off" required >
+            </div>
+        </div>
+        <div class="form-group">
+            <label>内容：</label>
+            <div class="input-group">
+                <textarea rows="3" aria-label="content" name="content" class="form-control" style="resize: none;height:120px;" autocomplete="off" required ></textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary text-light bg-info w-100">提交</button>
+    </form>
+</div>
+{% endblock %}

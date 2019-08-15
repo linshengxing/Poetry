@@ -33,19 +33,16 @@ module.exports = {
                     author: author,
                     content: content
                 }).then(result => {
-                    if (result.id != '' && result.id != undefined) {
-                        message = '成功添加诗词，感谢您的贡献！';
-                    } else {
-                        message = '添加新诗词出错了。。。';
-                    }
-                    ctx.render('addpoetryresult.html', {
-                        title: 'result',
-                        message: message,
-                    });
+                    
                 });
+                message = '成功添加诗词，感谢您的贡献！';
             }
             // ctx.response.body = message;
             // ctx.response.type = 'text/html';
+            ctx.render('addpoetryresult.html', {
+                title: 'result',
+                message: message,
+            });
         });
     }
 }

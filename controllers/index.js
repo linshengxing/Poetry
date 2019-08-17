@@ -5,7 +5,7 @@ const schedule = require('node-schedule');
 var showIndex = 0;
 
 // 设置定时器，每隔2小时显示下一首诗词
-schedule.scheduleJob('*/2 * * *', function () {
+schedule.scheduleJob('0 0 0 * * *', function () {
     showIndex++;
 });
 
@@ -14,7 +14,7 @@ module.exports = {
         let Poetry = model.Poetry;
         await Poetry.findAll({
             order: [
-                ['createdAt', 'DESC']
+                ['createdAt', 'ASC']
             ]
         }).then(function (poetrys) {
             // 索引超过诗文的总数则重置，再显示诗文

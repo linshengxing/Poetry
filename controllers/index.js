@@ -18,7 +18,7 @@ module.exports = {
             ]
         }).then(function (poetrys) {
             // 索引超过诗文的总数则重置，再显示诗文
-            if (showIndex > poetrys.length) {
+            if (showIndex >= poetrys.length) {
                 showIndex = 0;
             }
             ctx.render('index.html', {

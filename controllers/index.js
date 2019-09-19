@@ -4,7 +4,7 @@ const schedule = require('node-schedule');
 // 每次项目启动则重置，用于显示诗文
 var showIndex = 0;
 
-// 设置定时器，每隔2小时显示下一首诗词
+// 设置定时器，每天凌晨更新诗词
 schedule.scheduleJob('0 0 0 * * *', function () {
     showIndex++;
 });

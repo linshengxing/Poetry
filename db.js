@@ -59,7 +59,7 @@ function defineModel(name, attributes) {
             beforeValidate: function (obj) {
                 let now = Date.now();
                 if (obj.isNewRecord) {
-                    console.log('will create entity...' + obj);
+                    // console.log('will create entity...' + obj);
                     if (!obj.id) {
                         obj.id = generateId();
                     }

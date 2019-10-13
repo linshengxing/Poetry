@@ -22,7 +22,7 @@ module.exports = {
                 showIndex = 0;
             }
             ctx.render('index.html', {
-                title: 'Welcome',
+                title: '每日古诗词',
                 poetry: poetrys[showIndex]
             });
         });

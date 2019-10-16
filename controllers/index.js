@@ -1,8 +1,12 @@
 const model = require('../model');
+const fs = require('mz/fs');
+const path = require('path');
 const schedule = require('node-schedule');
 
 // 每次项目启动则重置，用于显示诗文
 var showIndex = 0;
+
+var nipponcolor_data;
 
 // 设置定时器，每天凌晨更新诗词
 schedule.scheduleJob('0 0 0 * * *', function () {
@@ -26,5 +30,16 @@ module.exports = {
                 poetry: poetrys[showIndex]
             });
         });
+    },
+    'GET /nipponcolor': async (ctx, next) => {
+        let fp = path.resolve(__dirname, '../localdata/nipponcolor.json');
+        fs.readFile(fp, 'utf8', function (err, data) {
+            if (err) console.log(err);
+            nipponcolor_data = data;
+        });
+        ctx.res.writeHead(200, {
+            'Content-Type': 'application/json'
+        });
+        ctx.res.end(JSON.stringify(nipponcolor_data));
     }
 }

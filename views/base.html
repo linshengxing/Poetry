@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="learn javascript by www.liaoxuefeng.com">
+    <meta name="description" content="每日古诗词">
     <meta name="google-site-verification" content="uzzoPnKElyADN-TUCyQ3wC4mgYZ6PVB8dbrueZF0XCc" />
     <title>{{ title }}</title>
     <link rel="shortcut icon" href="/static/favicon-01.ico" />
@@ -14,8 +14,8 @@
     <script src="/static/js/bootstrap-alert.js"></script>
 </head>
 
-<body style="min-height: 100%;margin:0;padding:0;position: relative;background-color: #7BA23F">
-    <!-- #78C2C4   -->
+<body id="globalbody" style="min-height: 100%;margin:0;padding:0;position: relative;background-color: #7BA23F;">
+    <!-- #78C2C4  #7BA23F  -->
     <header class="navbar navbar-static-top">
         <!-- <div class="container">
         </div> -->
@@ -33,5 +33,26 @@
         </div>
     </footer>
 </body>
+<script type="text/javascript">
+    $(function () {
+
+        setInterval(getRgb, 72000000);
+
+        function getRgb() {
+            $.getJSON('/nipponcolor', function (data) {
+                debugger
+                let randomNum;
+                randomNum = Math.random();
+                randomNum = Math.round(randomNum * 250);
+                $('#globalbody')[0].style.backgroundColor = '#' + JSON.parse(data)[randomNum].color;
+            });
+        }
+
+        // debugger
+        // let backgroundColorArray = ['#0089A7', '#7BA23F', '#8F77B5', '#434343', '#24936E'];
+
+        // $('#globalbody')[0].style.backgroundColor = '#24936E';
+    });
+</script>
 
 </html>

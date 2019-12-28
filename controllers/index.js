@@ -27,7 +27,8 @@ module.exports = {
             }
             ctx.render('index.html', {
                 title: '每日古诗词',
-                poetry: poetrys[showIndex]
+                poetry: poetrys[showIndex],
+                total: poetrys.length
             });
         });
     },

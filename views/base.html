@@ -15,7 +15,17 @@
     <script src="/static/js/bootstrap-alert.js"></script>
 </head>
 <body id="globalbody">
-    <header class="navbar navbar-static-top header"></header>
+    <header class="navbar navbar-static-top">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="/">纳兰词</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/oneword">一句诗词</a>
+            </li>
+        </ul>
+    </header>
+    
     {% block main %} {% endblock %}
     <footer class="footer">
         <div class="container text-center">

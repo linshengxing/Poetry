@@ -3,7 +3,7 @@ const model = require('../model');
 module.exports = {
     'GET /addPoetry': async (ctx, next) => {
         ctx.render('addpoetry.html', {
-            title: 'addpoetry'
+            title: '新增诗词'
         });
     },
     'POST /addpoetry': async (ctx, next) => {

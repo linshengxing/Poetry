@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block main %}
+<div class="container-fluid">
+    <table class="main-content oneword-content">
+            <!-- <thead>
+                <tr>
+                    <th>
+                        <h1>{{ poetry.title}}</h1>
+                    </th>
+                </tr>
+                <tr>
+                    <th><h3 style="margin-bottom: 6px;">{{ poetry.author }}</h3></th>
+                </tr>
+            </thead> -->
+            <tbody>
+                <tr>
+                    <td id="content"></td>
+                </tr>
+                <tr>
+                    <td id="author"></td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+<script>
+    $.ajax({
+        url: 'https://v1.jinrishici.com/all.json',
+        method: 'get',
+        success: function (data) {
+            document.getElementById('content').innerText = data.content;
+            document.getElementById('author').innerText = '--' + data.author + '《' + data.origin + '》';
+        }
+    });
+</script>
+{% endblock %}

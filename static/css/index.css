@@ -7,8 +7,12 @@
     background-size: 100% 100%;
     background-color: #2A3950;
 }
-.header {
-    height: 80px;
+header {
+    height: 60px;
+}
+header a{
+    font-family: STXingkai, KaiTi_GB2312, BiauKai, STKaiti;
+    font-size: 1.2em;
 }
 .footer{
     background-color:#080808;
@@ -24,7 +28,7 @@ p a{
 .total{
     width:100%;
     height: 20px;
-    font-family:STXingkai;
+    font-family: STXingkai, KaiTi_GB2312, BiauKai, STKaiti;
     color: #FE7235;
     position: absolute;
     bottom: 70px;
@@ -35,10 +39,20 @@ p a{
 }
 .main-content{
     width:100%;
-    font-family: STXingkai;
+    font-family: STXingkai, KaiTi_GB2312, BiauKai, STKaiti;
     color:#FE7235;
     text-align: center;
 }
 .container-fluid{
     margin-top: 5%;
+}
+
+.oneword-content{
+    margin-top: 10%;
+}
+#content{
+    font-size:3.5rem;
+}
+#author{
+    font-size: 1.5rem;
 }

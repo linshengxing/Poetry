@@ -1,17 +1,18 @@
 const model = require('../model');
 const fs = require('mz/fs');
 const path = require('path');
-const schedule = require('node-schedule');
+// const schedule = require('node-schedule');
+const https = require('https');
 
 // 每次项目启动则重置，用于显示诗文
-var showIndex = 0;
+// var showIndex = 0;
 
-var nipponcolor_data;
+// var nipponcolor_data;
 
 // 设置定时器，每天凌晨更新诗词
-schedule.scheduleJob('0 0 0 * * *', function () {
-    showIndex++;
-});
+// schedule.scheduleJob('0 0 0 * * *', function () {
+//     showIndex++;
+// });
 
 module.exports = {
     'GET /': async (ctx, next) => {
@@ -22,9 +23,8 @@ module.exports = {
             ]
         }).then(function (poetrys) {
             // 索引超过诗文的总数则重置，再显示诗文
-            if (showIndex >= poetrys.length) {
-                showIndex = 0;
-            }
+            var showIndex = Math.floor(Math.random()*poetrys.length)
+            
             ctx.render('index.html', {
                 title: '每日古诗词',
                 poetry: poetrys[showIndex],

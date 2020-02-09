@@ -7,7 +7,7 @@
     <meta name="description" content="每日古诗词">
     <meta name="google-site-verification" content="uzzoPnKElyADN-TUCyQ3wC4mgYZ6PVB8dbrueZF0XCc" />
     <title>{{ title }}</title>
-    <link rel="shortcut icon" href="/static/favicon-01.ico" />
+    <link rel="shortcut icon" href="/static/favicon.ico" />
     <link rel="stylesheet" href="/static/css/bootstrap.css">
     <link rel="stylesheet" href="/static/css/index.css">
     <script src="/static/js/jquery-3.3.1.js"></script>
@@ -18,18 +18,18 @@
     <header class="navbar navbar-static-top">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link active" href="/">纳兰词</a>
+                <a class="nav-link active" href="/oneword">首页</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/oneword">一句诗词</a>
+                <a class="nav-link" href="/nalanxingde">纳兰性德</a>
             </li>
         </ul>
     </header>
-    
     {% block main %} {% endblock %}
+    <img src="/static/img/background.png" class="footer-img">
     <footer class="footer">
         <div class="container text-center">
-            <p class="text-white">Copyright&nbsp;&nbsp;&copy;2019&nbsp;&nbsp;<a href="https://linshengxing.github.io/">@Lins</a></p>
+            <p class="text-black">&copy;2019&nbsp;&nbsp;<a href="https://linshengxing.github.io/">@Lins</a></p>
         </div>
     </footer>
 </body>

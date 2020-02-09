@@ -15,7 +15,7 @@
                 {% for item in poetry.content.split('|') %}
                 <tr>
                     <td>
-                        <h4>{{ item }}</h4>
+                        <h1>{{ item }}</h1>
                     </td>
                 </tr>
                 {% endfor %}
@@ -23,7 +23,7 @@
             
         </table>
 </div>
-<div class="total">
+<!-- <div class="total">
     <h6>共收录诗词：<span class="total-num">{{ total }}</span> 首</h6>
-</div>
+</div> -->
 {% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block main %}
+<div class="container-fluid">
+    <table class="main-content">
+            <thead>
+                <tr>
+                    <th>
+                        <h1>《{{ poetry.rhythmic}}》</h1>
+                    </th>
+                </tr>
+                <tr>
+                    <th><h3 style="margin-bottom: 6px;">{{ poetry.author }}</h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in poetry.paragraphs %}
+                <tr>
+                    <td>
+                        <h1>{{ item }}</h1>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            
+        </table>
+</div>
+<!-- <div class="total">
+    <h6>共收录诗词：<span class="total-num">{{ total }}</span> 首</h6>
+</div> -->
+{% endblock %}

@@ -13,7 +13,7 @@ module.exports = {
             ]
         }).then(function (poetrys) {
             // 索引超过诗文的总数则重置，再显示诗文
-            var showIndex = Math.floor(Math.random() * poetrys.length)
+            var showIndex = Math.floor(Math.random() * poetrys.length);
 
             ctx.render('index.html', {
                 title: '纳兰性德',

@@ -21,6 +21,9 @@
                 <a class="nav-link active" href="/oneword">首页</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="/songci">宋词</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/nalanxingde">纳兰性德</a>
             </li>
         </ul>
@@ -29,11 +32,20 @@
     <!-- <img src="/static/img/background.png" class="footer-img"> -->
     <footer class="footer">
         <div class="container text-center">
-            <p class="text-black">&copy;2019&nbsp;&nbsp;<a href="https://linshengxing.github.io/">@Lins</a></p>
+            <p class="text-black">&copy;2020&nbsp;&nbsp;<a href="https://linshengxing.github.io/">@Lins</a></p>
         </div>
     </footer>
 </body>
 <script type="text/javascript">
+    $(function() {
+        if (window.innerWidth < 768) {
+            document.getElementsByTagName('html')[0].style.fontSize = '10px';
+        } else if (window.innerWidth >= 768 && window.innerWidth < 1920) {
+            document.getElementsByTagName('html')[0].style.fontSize = '12px';
+        } else {
+            document.getElementsByTagName('html')[0].style.fontSize = '14px';
+        }
+    });
     // $(function () {
 
     //     setInterval(getRgb, 6000);

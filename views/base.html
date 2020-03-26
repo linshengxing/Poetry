@@ -16,17 +16,6 @@
 </head>
 <body id="globalbody">
     <header class="navbar navbar-static-top">
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link active" href="/oneword">首页</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/songci">宋词</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/nalanxingde">纳兰性德</a>
-            </li>
-        </ul>
     </header>
     {% block main %} {% endblock %}
     <!-- <img src="/static/img/background.png" class="footer-img"> -->
@@ -46,25 +35,5 @@
             document.getElementsByTagName('html')[0].style.fontSize = '14px';
         }
     });
-    // $(function () {
-
-    //     setInterval(getRgb, 6000);
-
-    //     function getRgb() {
-    //         $.getJSON('/nipponcolor', function (data) {
-    //             debugger
-    //             let randomNum;
-    //             randomNum = Math.random();
-    //             randomNum = Math.round(randomNum * 250);
-    //             $('#globalbody')[0].style.backgroundColor = '#' + JSON.parse(data)[randomNum].color;
-    //         });
-    //     }
-
-        // debugger
-        // let backgroundColorArray = ['#0089A7', '#7BA23F', '#8F77B5', '#434343', '#24936E'];
-
-        // $('#globalbody')[0].style.backgroundColor = '#24936E';
-    // });
 </script>
-
 </html>

@@ -74,3 +74,11 @@ header a{
 #author{
     font-size: 1.5rem;
 }
+
+@font-face{
+    font-family: 'STXingkai';
+    src: url("/static/fonts/chinese.stxingka.ttf");
+    src: url("/static/fonts/chinese.stxingka.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}

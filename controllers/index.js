@@ -1,4 +1,6 @@
 const model = require('../model');
+const gm = require('gm');
+const send = require('koa-send');
 
 module.exports = {
     'GET /': async (ctx, next) => {
@@ -17,5 +19,19 @@ module.exports = {
                 total: poetrys.length
             });
         });
+    },
+    'GET /download': async(ctx, next) => {
+        let content = ctx.request.query.content;
+        gm('./static/img/background1.png')
+                // .fill('yellow')
+                .font('./static/fonts/微软雅黑.ttf')
+                .fontSize(40)
+                .drawText(0, 0, content, 'center')
+                .write('./static/img/draw.jpg', function (err) {
+                    console.log(err);
+                });
+        let imgPath = './static/img/draw.jpg';
+        ctx.attachment(imgPath);
+        await send(ctx, imgPath);
     }
 }

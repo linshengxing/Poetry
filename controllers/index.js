@@ -22,9 +22,9 @@ module.exports = {
     },
     'GET /download': async(ctx, next) => {
         let content = ctx.request.query.content;
-        gm('./static/img/background1.png')
+        await gm('./static/img/background1.png')
                 // .fill('yellow')
-                .font('./static/fonts/微软雅黑.ttf')
+                .font('./static/fonts/chinese.stxingka.ttf')
                 .fontSize(40)
                 .drawText(0, 0, content, 'center')
                 .write('./static/img/draw.jpg', function (err) {

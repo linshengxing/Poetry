@@ -1,6 +1,7 @@
 const model = require('../model');
 const gm = require('gm');
 const send = require('koa-send');
+const fs = require('fs');
 
 module.exports = {
     'GET /': async (ctx, next) => {
@@ -12,7 +13,14 @@ module.exports = {
         }).then(function (poetrys) {
             // 索引超过诗文的总数则重置，再显示诗文
             var showIndex = Math.floor(Math.random() * poetrys.length);
-
+            var content = poetrys[showIndex].content;
+            gm('./static/img/background1.png')
+                .font('./static/fonts/chinese.stxingka.ttf')
+                .fontSize(40)
+                .drawText(0, 0, content, 'center')
+                .write('./static/img/draw.jpg', function (err) {
+                    console.log(err);
+                });
             ctx.render('index.html', {
                 title: '诗词杂货铺',
                 poetry: poetrys[showIndex],
@@ -20,18 +28,11 @@ module.exports = {
             });
         });
     },
-    'GET /download': async(ctx, next) => {
+    'GET /download': async (ctx, next) => {
         let content = ctx.request.query.content;
-        await gm('./static/img/background1.png')
-                // .fill('yellow')
-                .font('./static/fonts/chinese.stxingka.ttf')
-                .fontSize(40)
-                .drawText(0, 0, content, 'center')
-                .write('./static/img/draw.jpg', function (err) {
-                    console.log(err);
-                });
         let imgPath = './static/img/draw.jpg';
+
         ctx.attachment(imgPath);
-        await send(ctx, imgPath);
+        send(ctx, imgPath);
     }
 }

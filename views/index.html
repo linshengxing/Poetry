@@ -20,8 +20,7 @@
 </div>
 <script>
     const handleClick = () => {
-        let content = $('#content').text();
-        window.open('/download?content=' +  content);
+        window.open('/download', '_self');
     }
 </script>
 {% endblock %}

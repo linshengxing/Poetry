@@ -29,10 +29,8 @@ module.exports = {
         });
     },
     'GET /download': async (ctx, next) => {
-        let content = ctx.request.query.content;
         let imgPath = './static/img/draw.jpg';
-
         ctx.attachment(imgPath);
-        send(ctx, imgPath);
+        await send(ctx, imgPath);
     }
 }

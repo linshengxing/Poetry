@@ -20,11 +20,11 @@ module.exports = {
         });
     },
     'POST /draw': async (ctx, next) => {
-        var content = ctx.request.body;
+        var postData = ctx.request.body;
         gm('./static/img/background1.png')
             .font('./static/fonts/chinese.stxingka.ttf')
             .fontSize(40)
-            .drawText(0, 0, content, 'center')
+            .drawText(0, 0, postData.content, 'center')
             .write('./static/img/draw.jpg', function (err) {
                 if (err)
                     console.log(err);

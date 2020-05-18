@@ -1,4 +1,9 @@
 {% extends "base.html" %} {% block main %}
+<header class="navbar navbar-static-top" style="display: block;margin-top:20px;">
+    <button style="margin-left: 30px;" type="button" class="btn btn-info" onclick="location.reload()">刷新页面</button>
+    <button style="margin-left: 30px;" type="button" class="btn btn-success" onclick="draw()">生成图片</button>
+    <button style="margin-left: 30px;" type="button" class="btn btn-success" onclick="download()">下载图片</button>
+</header>
 <div class="container-fluid">
     <table class="main-content oneword-content">
         <tbody>
@@ -11,4 +16,22 @@
         </tbody>
     </table>
 </div>
+<script>
+    const download = () => {
+        window.open('/download', '_self');
+    }
+    const draw = () => {
+        let content = $('#content').text();
+        $.ajax({
+            url: '/draw',
+            method: 'post',
+            data: {
+                content: content
+            },
+            success: function(data) {
+                console.log(data);
+            }
+        });
+    }
+</script>
 {% endblock %}

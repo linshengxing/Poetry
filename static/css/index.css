@@ -55,7 +55,7 @@ header a{
 }
 .main-content{
     width:100%;
-    font-family: STXingkai, KaiTi_GB2312, BiauKai, STKaiti;
+    font-family: STXingkai, KaiTi_GB2312, BiauKai, STKaiti,SCSTXingkai;
     color:black;
     text-align: center;
 }
@@ -76,7 +76,7 @@ header a{
 }
 
 @font-face{
-    font-family: 'STXingkai';
+    font-family: 'SCSTXingkai';
     src: url("/static/fonts/chinese.stxingka.ttf");
     src: url("/static/fonts/chinese.stxingka.ttf") format("truetype");
     font-weight: normal;

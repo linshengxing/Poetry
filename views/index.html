@@ -1,4 +1,8 @@
 {% extends "base.html" %} {% block main %}
+<header class="navbar navbar-static-top" style="display: block;margin-top:20px;">
+    <button style="margin-left: 30px;" type="button" class="btn btn-info" onclick="location.reload()">刷新</button>
+    <button style="margin-left: 30px;" type="button" class="btn btn-success" onclick="download()">下载</button>
+</header>
 <div class="container-fluid">
     <table class="main-content oneword-content">
         <tbody>
@@ -11,4 +15,9 @@
         </tbody>
     </table>
 </div>
+<script>
+    var download = () => {
+        window.open('/download', '_self');
+    }
+</script>
 {% endblock %}

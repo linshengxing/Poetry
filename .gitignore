@@ -64,4 +64,4 @@ typings/
 .vscode
 
 # 配置文件
-congif.js
+config.js

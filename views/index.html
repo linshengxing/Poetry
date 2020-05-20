@@ -1,8 +1,13 @@
 {% extends "base.html" %} {% block main %}
-<header class="navbar navbar-static-top" style="display: block;margin-top:20px;">
-    <button style="margin-left: 30px;" type="button" class="btn btn-info" onclick="location.reload()">刷新</button>
-    <button style="margin-left: 30px;" type="button" class="btn btn-success" onclick="download()">下载</button>
-</header>
+<ul class="nav justify-content-end align-items-center mr-5" style="height: 60px;max-width: 1300px;">
+    <li class="nav-item m-2">
+        <button type="button" class="btn btn-light" onclick="location.reload()"><strong>Refresh</strong></button>
+    </li>
+    <li class="nav-item m-2">
+        <button type="button" class="btn btn-light" onclick="download()"><strong>Download</strong></button>
+    </li>
+    <li class="nav-item"></li>
+</ul>
 <div class="container-fluid">
     <table class="main-content oneword-content">
         <tbody>

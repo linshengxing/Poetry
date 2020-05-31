@@ -2,7 +2,7 @@ const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const controller = require('./controller');
 const templating = require('./templating');
-const path = require('path');
+const jsonp = require('koa-jsonp');
 const app = new Koa();
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -29,6 +29,8 @@ app.use(templating('views', {
 }));
 
 app.use(controller());
+
+app.use(jsonp());
 
 app.listen(3000);
 console.log(`app started at port 3000...`);

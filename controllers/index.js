@@ -14,8 +14,6 @@ module.exports = {
             poetrys = data;
         });
         var showIndex = Math.floor(Math.random() * poetrys.length);
-        var content = poetrys[showIndex].content;
-        await drawImg(content);
         ctx.render('index.html', {
             title: '诗词杂货铺',
             poetry: poetrys[showIndex],
@@ -24,8 +22,29 @@ module.exports = {
     },
     'GET /download': async (ctx, next) => {
         let imgPath = './static/img/draw.jpg';
+        var content = ctx.request.query['content'];
+        await drawImg(content);
         ctx.attachment(imgPath);
         await send(ctx, imgPath);
+    },
+    'GET /refresh': async (ctx, next) => {
+        let Poetry = model.Poetry;
+        var poetrys;
+        await Poetry.findAll({
+            order: [
+                ['createdAt', 'ASC']
+            ]
+        }).then(function (data) {
+            poetrys = data;
+        });
+        var showIndex = Math.floor(Math.random() * poetrys.length);
+        let returnData = {
+            success: true,
+            data: {
+                poetry: poetrys[showIndex]
+            }
+        }
+        ctx.body = returnData;
     }
 }
 

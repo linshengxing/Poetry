@@ -38,6 +38,7 @@ module.exports = {
             poetrys = data;
         });
         var showIndex = Math.floor(Math.random() * poetrys.length);
+        console.log(showIndex);
         let returnData = {
             success: true,
             data: {

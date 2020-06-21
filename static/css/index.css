@@ -5,8 +5,10 @@
     padding:0;
     position:relative;
     background-size: 100% 100%;
-    background-color: white;
-    background-image: url("/static/img/background1.png");
+    background-color: #EECECE;
+    /* #98B7D7  #D45E5A  #BFD5C9  #DFDFE2  #FBF5E8  #8D8DAA  #A2BAB9  #FDF6F0  #EECECE*/
+    /* background-color: white; */
+    /* background-image: url("/static/img/background1.png"); */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,7 +58,9 @@ header a{
 .main-content{
     width:100%;
     font-family: STXingkai, KaiTi_GB2312, BiauKai, STKaiti, SCSTXingkai;
-    color:black;
+    color:#CA7D87;  
+    /* #4F7AAC  #F5F0EC  #633652  #77779A  #DE403F  #F6F5F1  #41404D  #6871F9  #CA7D87*/
+    /* color:black; */
     text-align: center;
 }
 .nav-item button{
@@ -77,6 +81,7 @@ header a{
 #author{
     font-size: 1.5rem;
 }
+
 
 @font-face{
     font-family: 'SCSTXingkai';

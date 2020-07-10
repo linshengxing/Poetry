@@ -52,14 +52,17 @@ module.exports = {
 }
 
 async function drawImg(theme, content) {
-    var bgImgPath = './static/img/' + theme + '.png';
+    var bgcolor = THEME[theme].bgcolor;
     var color = THEME[theme].color;
+    var drawText = ('"' + String(content).trim().replace(/"/g, '\\"') + '"');
     await new Promise((resolve, reject) => {
-        gm(bgImgPath)
+        gm(1920, 1080, bgcolor)
             .fill(color)
             .font('./static/fonts/chinese.stxingka.ttf')
             .fontSize(40)
-            .drawText(0, 0, content, 'center')
+            .gravity('Center')
+            .draw(["rotate 90 text 0,0 " + drawText])
+            // .drawText(0, 0, content, 'center')
             .write('./static/img/draw.jpg', function (err) {
                 if (err) {
                     console.log(err);

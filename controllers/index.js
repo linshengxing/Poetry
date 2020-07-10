@@ -1,6 +1,7 @@
 const model = require('../model');
 const gm = require('gm');
 const send = require('koa-send');
+const THEME = require('./theme');
 
 module.exports = {
     'GET /': async (ctx, next) => {
@@ -23,7 +24,8 @@ module.exports = {
     'GET /download': async (ctx, next) => {
         let imgPath = './static/img/draw.jpg';
         var content = ctx.request.query['content'];
-        await drawImg(content);
+        var theme = ctx.request.query['theme'];
+        await drawImg(theme, content);
         ctx.attachment(imgPath);
         await send(ctx, imgPath);
     },
@@ -49,9 +51,12 @@ module.exports = {
     }
 }
 
-async function drawImg(content) {
+async function drawImg(theme, content) {
+    var bgImgPath = './static/img/' + theme + '.png';
+    var color = THEME[theme].color;
     await new Promise((resolve, reject) => {
-        gm('./static/img/background1.png')
+        gm(bgImgPath)
+            .fill(color)
             .font('./static/fonts/chinese.stxingka.ttf')
             .fontSize(40)
             .drawText(0, 0, content, 'center')

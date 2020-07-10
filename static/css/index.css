@@ -81,7 +81,14 @@ header a{
 #author{
     font-size: 1.5rem;
 }
-
+.dropdown-menu > div {
+    margin-bottom: 5px;
+}
+.bgColor{
+    height:20px;
+    width:20px;
+    float:right;
+}
 
 @font-face{
     font-family: 'SCSTXingkai';

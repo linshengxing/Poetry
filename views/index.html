@@ -1,39 +1,4 @@
 {% extends "base.html" %} {% block main %}
-<ul class="nav justify-content-end align-items-center mr-5" style="height: 80px;max-width: 1400px;">
-    <li class="nav-item m-2">
-        <div class="dropdown">
-            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown"><strong>Theme</strong></button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <button type="button" class="btn btn-light dropdown-item" onclick="changeTheme('Blue')">
-                    Blue
-                    <div class="bgColor" style="background-color: #98B7D7;"></div>
-                </button>
-                <button type="button" class="btn btn-light dropdown-item" onclick="changeTheme('Pink')">
-                    Pink
-                    <div class="bgColor" style="background-color: #EECECE;"></div>
-                </button>
-                <button type="button" class="btn btn-light dropdown-item" onclick="changeTheme('White')">
-                    White
-                    <div class="bgColor" style="background-color: #FBF5E8;"></div>
-                </button>
-                <button type="button" class="btn btn-light dropdown-item" onclick="changeTheme('Red')">
-                    Red
-                    <div class="bgColor" style="background-color: #D45E5A;"></div>
-                </button>
-                <button type="button" class="btn btn-light dropdown-item" onclick="changeTheme('Green')">
-                    Green
-                    <div class="bgColor" style="background-color: #BFD5C9;"></div>
-                </button>
-            </div>
-        </div>
-    </li>
-    <li class="nav-item m-2">
-        <button type="button" class="btn btn-light" onclick="refresh()"><strong>Refresh</strong></button>
-    </li>
-    <li class="nav-item m-2">
-        <button type="button" class="btn btn-light" onclick="download()"><strong>Download</strong></button>
-    </li>
-</ul>
 <div class="container-fluid">
     <table class="main-content oneword-content">
         <tbody>

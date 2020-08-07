@@ -54,16 +54,12 @@ module.exports = {
 async function drawImg(theme, content) {
     var bgcolor = THEME[theme].bgcolor;
     var color = THEME[theme].color;
-    var drawText = ('"' + String('123456').trim().replace(/"/g, '\\"') + '"');
     await new Promise((resolve, reject) => {
         gm(1920, 1080, bgcolor)
             .fill(color)
             .font('./static/fonts/chinese.stxingka.ttf')
             .fontSize(40)
-            .gravity('Center')
-            .format('%y')
-            .draw(["text 0,0 " + drawText])
-            // .drawText(0, 0, content, 'center')
+            .drawText(0, 0, content, 'center')
             .write('./static/img/draw.jpg', function (err) {
                 if (err) {
                     console.log(err);

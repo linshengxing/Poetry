@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block main %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <textarea id="centent" rows="8" class="col-md-4" style="resize: none;"></textarea>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-4"></div>
+        <img id="drawImg" class="col-md-4 img-thumbnail" src="/static/img/background1.png">
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-info" onclick="gmImg()">生成图片</button>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-authhide="true">
+        <div class="toast-header">
+            <strong>消息</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="close"></button>
+        </div>
+        <div id="toastMessage" class="toast-body">
+            图片生成完毕！
+        </div>
+    </div>
+</div>
+<script>
+    var gmImg = function() {
+        var content = $('#centent').val();
+        debugger
+        $.ajax({
+            url: '/draw',
+            method: 'get',
+            data: {
+                content: content
+            },
+            success: function(result) {
+                if (result == "success") {
+                    $('#drawImg').attr('src', '/static/img/draw.jpg?t=' + Math.random());
+                    // $('.toast').toast('show');
+                }
+            }
+        });
+    }
+</script>
+{% endblock %}

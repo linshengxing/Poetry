@@ -11,6 +11,7 @@
         </tbody>
     </table>
 </div>
+<script src="../static/js/typer.min.js"></script>
 <script>
     var download = () => {
         var content = $('#content').text();
@@ -26,8 +27,16 @@
                 if (returnData.success) {
                     var contentText = returnData.data.poetry.content;
                     var authorText = '--' + returnData.data.poetry.author + returnData.data.poetry.title;
-                    $('#content').html(contentText);
-                    $('#author').html(authorText);
+                    // $('#content').html(contentText);
+                    // $('#author').html(authorText);
+                    var contentElem = document.querySelector('#content');
+                    var authorElem = document.querySelector('#author');
+                    contentElem.removeAttribute('data-typer');
+                    authorElem.removeAttribute('data-typer');
+                    contentElem.innerHTML = '';
+                    authorElem.innerHTML = '';
+                    typer(contentElem, 160).cursor(false).line(contentText).end();
+                    typer(authorElem, 160).cursor(false).line(authorText).end();
                 }
             }
         });

@@ -35,8 +35,9 @@
                     authorElem.removeAttribute('data-typer');
                     contentElem.innerHTML = '';
                     authorElem.innerHTML = '';
-                    typer(contentElem, 160).cursor(false).line(contentText).end();
-                    typer(authorElem, 160).cursor(false).line(authorText).end();
+                    typer(contentElem, 180).cursor(false).line(contentText).end(function () {
+                        typer(authorElem, 150).cursor(false).line(authorText).end();
+                    });
                 }
             }
         });

@@ -1,2 +1,2 @@
 # Poetry
-node.hs
+node.js
